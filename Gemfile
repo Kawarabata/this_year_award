@@ -5,6 +5,7 @@ ruby '3.0.1'
 
 gem 'bootsnap', '>= 1.4.4', require: false
 gem 'omniauth-google-oauth2'
+gem 'omniauth-rails_csrf_protection'
 gem 'puma', '~> 5.0'
 gem 'rails', '~> 6.1.3', '>= 6.1.3.2'
 gem 'sass-rails', '>= 6'

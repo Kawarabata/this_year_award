@@ -24,18 +24,12 @@ ActiveRecord::Schema.define(version: 2021_05_14_142030) do
   end
 
   create_table "users", force: :cascade do |t|
+    t.string "provider", null: false
     t.string "name", null: false
     t.string "email", null: false
-    t.string "crypted_password"
-    t.string "password_salt"
-    t.string "persistence_token"
-    t.integer "login_count", default: 0, null: false
-    t.integer "failed_login_count", default: 0, null: false
-    t.datetime "last_request_at"
-    t.datetime "current_login_at"
-    t.datetime "last_login_at"
-    t.string "current_login_ip"
-    t.string "last_login_ip"
+    t.string "image"
+    t.string "oauth_token"
+    t.datetime "oauth_expires_at"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

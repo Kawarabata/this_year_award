@@ -14,6 +14,9 @@ AllCops:
     - bin/**/*
     - node_modules/**/*
 
+AsciiComments:
+  Enabled: false
+
 # Offense count: 3
 # Cop supports --auto-correct.
 # Configuration parameters: EnforcedStyle, IndentationWidth.
@@ -67,6 +70,8 @@ Layout/SpaceInsideArrayLiteralBrackets:
 # Configuration parameters: CountComments, CountAsOne, ExcludedMethods, IgnoredMethods.
 # IgnoredMethods: refine
 Metrics/BlockLength:
+  Exclude:
+    - 'config/**/*'
   Max: 27
 
 # Offense count: 1
