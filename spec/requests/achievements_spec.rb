@@ -3,14 +3,16 @@ require 'rails_helper'
 RSpec.describe "Achievements", type: :request do
   describe "GET /index" do
     it "returns http success" do
-      get "/achievements/index"
+      get "/achievements"
       expect(response).to have_http_status(:success)
     end
   end
 
-  describe "GET /show" do
+  describe "GET /:id" do
+    let(:achievement) { create(:achievement) }
+
     it "returns http success" do
-      get "/achievements/show"
+      get achievement_path(achievement.id)
       expect(response).to have_http_status(:success)
     end
   end
@@ -22,11 +24,10 @@ RSpec.describe "Achievements", type: :request do
     end
   end
 
-  describe "GET /edit" do
+  describe "GET /:id/edit" do
     it "returns http success" do
-      get "/achievements/edit"
+      get "/achievements/1/edit"
       expect(response).to have_http_status(:success)
     end
   end
-
 end
