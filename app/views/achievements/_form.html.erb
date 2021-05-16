@@ -12,22 +12,22 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :title %>
+    <%= form.label '一言で言うと' %>
     <%= form.text_field :title %>
   </div>
 
   <div class="field">
-    <%= form.label :description %>
-    <%= form.text_field :description %>
+    <%= form.label '詳しく(任意)' %>
+    <%= form.text_area :description %>
   </div>
 
   <div class="field">
-    <%= form.label :score %>
+    <%= form.label '点数(100点満点)' %>
     <%= form.number_field :score %>
   </div>
 
   <div class="field">
-    <%= form.label :date %>
+    <%= form.label '達成した日付' %>
     <%= form.date_select :date %>
   </div>
 
