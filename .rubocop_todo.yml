@@ -72,6 +72,7 @@ Layout/SpaceInsideArrayLiteralBrackets:
 Metrics/BlockLength:
   Exclude:
     - 'config/**/*'
+    - 'spec/**/*'
   Max: 27
 
 # Offense count: 1

@@ -11,5 +11,13 @@ class AchievementsController < ApplicationController
     @achievement = Achievement.new
   end
 
-  def edit; end
+  def create; end
+
+  def edit
+    @achievement = Achievement.new
+  end
+
+  def update; end
+
+  def destroy; end
 end
