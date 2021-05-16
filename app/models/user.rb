@@ -1,15 +1,12 @@
 class User < ApplicationRecord
   has_many :achievements, dependent: :destroy
 
-  def self.from_omniauth(auth)
-    where(provider: auth.provider, email: auth.info.email).first_or_initialize.tap do |user|
-      user.provider = auth.provider
-      user.name = auth.info.name
-      user.email = auth.info.email
-      user.image = auth.info.image
-      user.oauth_token = auth.credentials.token
-      user.oauth_expires_at = Time.at(auth.credentials.expires_at)
-      return user
+  class << self
+    def find_or_create_with_oauth(request)
+      user_params = OauthExtractor.extract_user_params(request)
+      find_or_create_by(email: user_params[:email]) do |user|
+        user.update(user_params)
+      end
     end
   end
 end
