@@ -82,6 +82,8 @@ Metrics/CyclomaticComplexity:
 # Offense count: 1
 # Configuration parameters: CountComments, CountAsOne, ExcludedMethods, IgnoredMethods.
 Metrics/MethodLength:
+  Exclude:
+    - 'spec/support/*.rb'
   Max: 13
 
 # Offense count: 1
