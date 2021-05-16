@@ -1,7 +1,7 @@
 class SessionsController < ApplicationController
   def create
-    if user = User.find_or_create_with_oauth(request)
-      session[:user_id] = user.id
+    if (user = User.find_or_create_with_oauth(request))
+      log_in user
       redirect_to root_path
     else
       redirect_to new_session_path
@@ -9,7 +9,7 @@ class SessionsController < ApplicationController
   end
 
   def destroy
-    session[:user_id] = nil
+    log_out
     redirect_to root_path
   end
 end
