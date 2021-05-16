@@ -1,0 +1,11 @@
+<header>
+  <div class="logo">今年アワード</div>
+  <div class="account">
+    <% if not logged_in? %>
+      <%= link_to "Googleでログイン", "/auth/google_oauth2", id: "sign_in", method: :post %>
+    <% else %>
+      <%= current_user.name %>さん
+      <%= link_to "ログアウト", signout_path, id: "sign_out", data: { confirm: 'ログアウトしますか？' } %>
+    <% end %>
+  </div>
+</header>

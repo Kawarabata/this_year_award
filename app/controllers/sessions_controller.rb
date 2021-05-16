@@ -4,7 +4,7 @@ class SessionsController < ApplicationController
   def create
     if (user = User.find_or_create_with_oauth(request))
       log_in user
-      redirect_to root_path
+      redirect_to achievements_path
     else
       redirect_to new_session_path
     end
