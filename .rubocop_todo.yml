@@ -187,7 +187,8 @@ Style/StderrPuts:
 # Configuration parameters: EnforcedStyle, ConsistentQuotesInMultiline.
 # SupportedStyles: single_quotes, double_quotes
 Style/StringLiterals:
-  Enabled: false
+  Exclude:
+    - 'config/application.rb'
 
 # Offense count: 3
 # Cop supports --auto-correct.
